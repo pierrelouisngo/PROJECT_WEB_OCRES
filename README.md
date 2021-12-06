@@ -1,3 +1,6 @@
+# NGO Pierre-Louis & JEGO-RAGAS Océane
+# TD06 OCRES ING4 
+
 # Projet de fin de semestre
 
 A lire impérativement avant de commencer quoi que ce soit, ce sont les règles que vous devrez appliquer tout au long du semestre:
