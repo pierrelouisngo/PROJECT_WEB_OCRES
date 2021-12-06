@@ -8,6 +8,7 @@ import Footer from "./Components/Footer";
 import Footer2 from "./Components/Footer2";
 import Test from "./Components/Test";
 import Test2 from "./Components/Test2";
+import Test3 from "./Components/Test3";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
@@ -37,6 +38,9 @@ import './App.css';
         </div>
         <div className="col">
          <Test2/>
+        </div>
+        <div className="col">
+         <Test3/>
         </div>
   </div> 
   <Footer2/>

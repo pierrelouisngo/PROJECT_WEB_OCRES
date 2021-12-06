@@ -3,6 +3,11 @@
 import Footer2 from "./Footer2";
 import Widget3 from "./Widget3";
 import Widget4 from "./Widget4";
+
+import PageAjout from "./PageAjout";
+import PageModify from "./PageModify";
+import PageDelete from "./PageDelete";
+
 import React, { useState }  from 'react'
 class Admin extends React.Component {
 
@@ -16,6 +21,20 @@ class Admin extends React.Component {
     <div className="col">
       <Widget4/>
       </div> 
+
+      <div className="col">
+      <PageAjout/>
+      </div> 
+
+      <div className="col">
+      <PageDelete/>
+      </div> 
+
+      <div className="col">
+      <PageModify/>
+      </div> 
+    
+      
       <div className="col">
       <div className="card">
             <div className="card-body">
