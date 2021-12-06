@@ -3,6 +3,8 @@ import Widget from "./Components/Widget";
 import Widget2 from "./Components/Widget2";
 import Widget3 from "./Components/Widget3";
 import Widget4 from "./Components/Widget4";
+import WidgetOC1 from "./Components/WidgetOC1";
+import WidgetOC2 from "./Components/WidgetOC2";
 import Header from "./Components/Header";
 import Footer from "./Components/Footer";
 import Footer2 from "./Components/Footer2";
@@ -20,6 +22,12 @@ import './App.css';
       <div className="row row-cols-1 row-cols-md-2 g-4">
     <div className="col">
     <Widget/> 
+     </div>
+     <div className="col">
+    <WidgetOC1/> 
+     </div>
+     <div className="col">
+    <WidgetOC2/> 
      </div>
     <div className="col">
       <Widget2/>
