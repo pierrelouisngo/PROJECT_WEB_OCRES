@@ -14,7 +14,6 @@ const usersRoute = require('./routes/users')
 app.use('/index', indexRoute);
 app.use('/users', usersRoute);
 
-
 //Connect to db
 mongoose.connect(
     process.env.DB_CONNECTION, 
