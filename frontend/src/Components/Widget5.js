@@ -5,11 +5,11 @@ export const Widget5= ()=> {
 
     var [name,setName]=useState()
     
-    const nameUpdate=(event)=>{ // Dealing with name field changes to update our state
+    const nameUpdate=(event)=>{ 
         setName(event.target.value)
     }
 
-    const handleSubmit=()=> { // Once the form has been submitted, this function will post to the backend
+    const handleSubmit=()=> {
         const postURL = `https://rest.bandsintown.com/artists/${this.state.searchValue}/?app_id=0ca0cf2b477cf81859c0a0e548b04dd3` 
         fetch(postURL, {
             method: 'POST',
@@ -17,21 +17,21 @@ export const Widget5= ()=> {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ // We should keep the fields consistent for managing this data later
+            body: JSON.stringify({ 
                 title: name,
                 description:description
             })
         })
         .then(()=>{
-            // Once posted, the user will be notified 
-            alert('Success! Check your database ! ');
+           
+            alert('Rajout de la donnée réussie ! ');
         })
     }
 
     return (
         <div className="card">
        <div className="card-body">
-       <h5>Add data &#10133; </h5> 
+       <h5>Ajouter des devoirs &#10133; </h5> 
         <form onSubmit={handleSubmit}>
   <div class="form-group">
     <label for="example1">Title</label>
