@@ -48,8 +48,9 @@ export default class Widget6 extends React.Component {
                         <div className="detailProfil">
                         <img className="photoProfil2" src={this.state.utilisateur.thumb_url}></img>
                             <h5>{this.state.utilisateur.name}</h5>
-                            <small><a href={this.state.utilisateur.url}>Prendre un ticket</a></small>
+                            <small><a href={this.state.utilisateur.url} target="_blank">Prendre un ticket</a></small>
                             <small>Events: {this.state.utilisateur.upcoming_event_count}</small>
+                            <small><a href ={this.state.utilisateur.links[0].url} target="_blank">Ecouter sa playlist</a></small>
                         </div>
                     </div>
                 </>)}

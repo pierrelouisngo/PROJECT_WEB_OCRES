@@ -101,6 +101,8 @@ h5
  margin-left: 100px;
   width: 400px;
   height:auto;
+  box-shadow: 0 0 5px 0 ;
+ 
 } 
 
 .card:hover
@@ -112,7 +114,9 @@ h5
 .nav
 {
   width:200px;
-}
+  
+} 
+
 
 
 /* Widget LAST.FM */

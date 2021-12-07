@@ -1,79 +1,28 @@
+import axios from "axios";
 import React, { useRef, useState } from "react";
 
-function App() {
-  const baseURL = "http://localhost:3001";
+function Widget5() {
 
-  const delete_id = useRef(null);
+const[id,setId]=useState('');
 
-  const [deleteResult, setDeleteResult] = useState(null);
 
-  const fortmatResponse = (res) => {
-    return JSON.stringify(res, null, 2);
-  }
-  
-  async function deleteAllData() {
-    try {
-      const res = await fetch(`${baseURL}/index`, { method: "delete" });
+const handleInputRemove= () => {
+    axios
+    .delete(`http://localhost:3001/index/${id}`)
+    .catch(console.error);
+    document.location.reload(true);
+}
 
-      const data = await res.json();
 
-      const result = {
-        status: res.status + "-" + res.statusText,
-        headers: { "Content-Type": res.headers.get("Content-Type") },
-        data: data,
-      };
 
-      setDeleteResult(fortmatResponse(result));
-    } catch (err) {
-      setDeleteResult(err.message);
-    }
-  }
-
-  async function deleteDataById() {
-    const id = delete_id.current.value;
-
-    if (id){
-      try {
-        const res = await fetch(`${baseURL}/index/${id}`, { method: "delete" });
-
-        const data = await res.json();
-
-        const result = {
-          status: res.status + "-" + res.statusText,
-          headers: { "Content-Type": res.headers.get("Content-Type") },
-          data: data,
-        };
-
-        setDeleteResult(fortmatResponse(result));
-      } catch (err) {
-        setDeleteResult(err.message);
-      }
-    }
-  }
-  
-  const clearDeleteOutput = () => {
-    setDeleteResult(null);
-  }
   
   return (
-    <div className="card">
-      <div className="card-header">Delete data</div>
-      <div className="card-body">
-        <div className="input-group input-group-sm">
-          <button className="btn btn-sm btn-danger" onClick={deleteAllData}>Delete All</button>
-
-          <input type="text" ref={delete_id} className="form-control ml-2" placeholder="Id" />
-          <div className="input-group-append">
-            <button className="btn btn-sm btn-danger" onClick={deleteDataById}>Delete by Id</button>
-          </div>
-
-          <button className="btn btn-sm btn-warning ml-2" onClick={clearDeleteOutput}>Clear</button>
-        </div>    
-        
-        { deleteResult && <div className="alert alert-secondary mt-2" role="alert"><pre>{deleteResult}</pre></div> }      
+      <div>
+          <input placeholder="id" onChange={e=>setId(e.target.value)}/>
+         <button onClick={()=>handleInputRemove()}>Delete</button>  
       </div>
-    </div>
+  
   );
 }
 
-export default App;
+export default Widget5;
