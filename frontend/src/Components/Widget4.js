@@ -23,7 +23,7 @@ export const Widget4= ()=> {
             },
             body: JSON.stringify({ // We should keep the fields consistent for managing this data later
                 title: name,
-                description:"description"
+                description:description
             })
         })
         .then(()=>{
