@@ -83,7 +83,7 @@ h5
 
 .photoProfil
 {
-  width: 80%;
+  width: 50%;
 }
 
 .detailProfil
@@ -145,6 +145,12 @@ h5
 .photoProfil
 {
   width: 80%;
+}
+
+.photoProfil2
+{
+  width: 200px;
+  height: 200px;
 }
 
 .detailProfil

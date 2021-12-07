@@ -33,7 +33,7 @@ export default class Widget6 extends React.Component {
 
     render = () => {
         return (
-            <div className="card">
+     <div className="card">
        <div className="card-body">
             <div className="WidgetOC1">
                 <center><h5>Bandswintown - Profil artiste</h5></center>
@@ -42,17 +42,15 @@ export default class Widget6 extends React.Component {
                     <button className="btnRech" onClick={() => this.getall()}>Recherche</button>
                 </div>
                 <hr></hr>
-
-
+  
                 {!!this.state.utilisateur && (<>
                     <div className="infoUser">
-                    <img className="photoProfil" src={this.state.utilisateur.thumb_url}></img>
                         <div className="detailProfil">
+                        <img className="photoProfil2" src={this.state.utilisateur.thumb_url}></img>
                             <h5>{this.state.utilisateur.name}</h5>
-                            <p> URL : {this.state.utilisateur.url}</p>
-                            <p>Events: {this.state.utilisateur.upcoming_event_count}</p>
+                            <small><a href={this.state.utilisateur.url}>Prendre un ticket</a></small>
+                            <small>Events: {this.state.utilisateur.upcoming_event_count}</small>
                         </div>
-
                     </div>
                 </>)}
                 </div>

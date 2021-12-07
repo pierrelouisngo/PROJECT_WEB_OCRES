@@ -47,7 +47,7 @@ export default class Widget6 extends React.Component {
                     <div className="infoUser">
                         <div className="detailProfil">
                             <h5>{this.state.utilisateur[0].venue.location}</h5>
-                            <p> Date : {this.state.utilisateur[0].datetime}</p>
+                            <p> Date:{this.state.utilisateur[0].datetime}</p>
                         </div>
                     </div>
                 </>)}

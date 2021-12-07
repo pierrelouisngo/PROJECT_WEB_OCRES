@@ -1,54 +1,79 @@
-import React, { useState }  from 'react'
+import React, { useRef, useState } from "react";
 
+function App() {
+  const baseURL = "http://localhost:3001";
 
-export const Widget5= ()=> {
+  const delete_id = useRef(null);
 
-    var [name,setName]=useState()
-    
-    const nameUpdate=(event)=>{ 
-        setName(event.target.value)
+  const [deleteResult, setDeleteResult] = useState(null);
+
+  const fortmatResponse = (res) => {
+    return JSON.stringify(res, null, 2);
+  }
+  
+  async function deleteAllData() {
+    try {
+      const res = await fetch(`${baseURL}/index`, { method: "delete" });
+
+      const data = await res.json();
+
+      const result = {
+        status: res.status + "-" + res.statusText,
+        headers: { "Content-Type": res.headers.get("Content-Type") },
+        data: data,
+      };
+
+      setDeleteResult(fortmatResponse(result));
+    } catch (err) {
+      setDeleteResult(err.message);
     }
+  }
 
-    const handleSubmit=()=> {
-        const postURL = `https://rest.bandsintown.com/artists/${this.state.searchValue}/?app_id=0ca0cf2b477cf81859c0a0e548b04dd3` 
-        fetch(postURL, {
-            method: 'POST',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ 
-                title: name,
-                description:description
-            })
-        })
-        .then(()=>{
-           
-            alert('Rajout de la donnée réussie ! ');
-        })
+  async function deleteDataById() {
+    const id = delete_id.current.value;
+
+    if (id){
+      try {
+        const res = await fetch(`${baseURL}/index/${id}`, { method: "delete" });
+
+        const data = await res.json();
+
+        const result = {
+          status: res.status + "-" + res.statusText,
+          headers: { "Content-Type": res.headers.get("Content-Type") },
+          data: data,
+        };
+
+        setDeleteResult(fortmatResponse(result));
+      } catch (err) {
+        setDeleteResult(err.message);
+      }
     }
+  }
+  
+  const clearDeleteOutput = () => {
+    setDeleteResult(null);
+  }
+  
+  return (
+    <div className="card">
+      <div className="card-header">Delete data</div>
+      <div className="card-body">
+        <div className="input-group input-group-sm">
+          <button className="btn btn-sm btn-danger" onClick={deleteAllData}>Delete All</button>
 
-    return (
-        <div className="card">
-       <div className="card-body">
-       <h5>Ajouter des devoirs &#10133; </h5> 
-        <form onSubmit={handleSubmit}>
-  <div class="form-group">
-    <label for="example1">Title</label>
-    <input required onChange={nameUpdate} type="text" class="form-control" id="text1" placeholder="Enter title"/>
-  </div>
-  <div class="form-group">
-    <label for="example2">Description</label>
-    <input required onChange={descriptionUpdate} type="text" class="form-control" id="text2" placeholder="Enter description"/>
-  </div>
-  <br/>
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form>
-</div>
-</div>
-       
-    )
-    
+          <input type="text" ref={delete_id} className="form-control ml-2" placeholder="Id" />
+          <div className="input-group-append">
+            <button className="btn btn-sm btn-danger" onClick={deleteDataById}>Delete by Id</button>
+          </div>
+
+          <button className="btn btn-sm btn-warning ml-2" onClick={clearDeleteOutput}>Clear</button>
+        </div>    
+        
+        { deleteResult && <div className="alert alert-secondary mt-2" role="alert"><pre>{deleteResult}</pre></div> }      
+      </div>
+    </div>
+  );
 }
 
-export default Widget5;
+export default App;

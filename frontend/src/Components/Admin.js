@@ -3,6 +3,7 @@
 import Footer2 from "./Footer2";
 import Widget3 from "./Widget3";
 import Widget4 from "./Widget4";
+import Widget5 from "./Widget5";
 
 import PageAjout from "./PageAjout";
 import PageModify from "./PageModify";
@@ -36,12 +37,7 @@ class Admin extends React.Component {
     
       
       <div className="col">
-      <div className="card">
-            <div className="card-body">
-              <h5 className="card-title">Card title</h5>
-              <p className="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            </div>
-        </div>
+      <Widget5/> 
         </div>
         <div className="col">
         <div className="card">

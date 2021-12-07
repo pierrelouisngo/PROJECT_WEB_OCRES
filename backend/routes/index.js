@@ -15,6 +15,17 @@ router.get('/', async(req,res) => {
   }
 });
 
+//Specific posts
+router.get('/:postId', async function (req, res, next) {
+
+  try {
+    const post = await Post.findById(req.params.postId)
+    res.json(post);
+  } catch (err) {
+    res.json({ message: err });
+  }
+});
+
 //Post
 router.post('/', async (req, res)=> {
   const post = new Post({
