@@ -1,20 +1,16 @@
 import React, { useState }  from 'react'
 
+
 export const Widget5= ()=> {
 
     var [name,setName]=useState()
-    var [description,setDescription]=useState()
     
     const nameUpdate=(event)=>{ // Dealing with name field changes to update our state
         setName(event.target.value)
     }
 
-    const descriptionUpdate=(event)=>{
-        setDescription(event.target.value)
-    }
-
     const handleSubmit=()=> { // Once the form has been submitted, this function will post to the backend
-        const postURL = "http://localhost:3001/index/" //Our previously set up route in the backend
+        const postURL = `https://rest.bandsintown.com/artists/${this.state.searchValue}/?app_id=0ca0cf2b477cf81859c0a0e548b04dd3` 
         fetch(postURL, {
             method: 'POST',
             headers: {
