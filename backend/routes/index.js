@@ -1,6 +1,8 @@
 var express = require("express");
 var router = express.Router();
-const Post = require('../models/Posts')
+//const Post = require('../Controllers/Posts.controller');
+const Post = require('../models/Posts');
+
 
 
 //Get 
@@ -28,25 +30,12 @@ router.post('/', async (req, res)=> {
   } 
 });
 
-router.get('/:postId', async (req,res) => {
-try{
- const post = await Post.findById(req.params.postId);
- res.json(post);
-}catch(err){
-  res.json({message: err});
-}
-});
+//router.get('/:name',Post.getData);
 
 
-//Delete Post 
-router.delete('/:postId', async (req,res)=> {
-  try{
- const removedPost = await Post.remove({_id: req.params.postId});
- res.json(removedPost);
-}catch(err) {
-  res.json({ message: err});
-}
-});
+
+
+//router.delete('/:name',Post.deleteData);
 
 //Update Post
 router.patch('/:postId', async function (req, res, next) {

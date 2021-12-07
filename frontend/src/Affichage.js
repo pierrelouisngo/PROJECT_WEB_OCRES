@@ -3,8 +3,7 @@ import Widget from "./Components/Widget";
 import Widget2 from "./Components/Widget2";
 import Widget3 from "./Components/Widget3";
 import Widget4 from "./Components/Widget4";
-import WidgetOC1 from "./Components/WidgetOC1";
-import WidgetOC2 from "./Components/WidgetOC2";
+import Widget6 from "./Components/Widget6";
 import Header from "./Components/Header";
 import Footer from "./Components/Footer";
 import Footer2 from "./Components/Footer2";
@@ -12,7 +11,6 @@ import Test from "./Components/Test";
 import Test2 from "./Components/Test2";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-
 
 
 
@@ -25,17 +23,11 @@ import './App.css';
     <div className="col">
     <Widget/> 
      </div>
-     <div className="col">
-    <WidgetOC1/> 
-     </div>
-     <div className="col">
-    <WidgetOC2/> 
-     </div>
     <div className="col">
       <Widget2/>
       </div> 
       <div className="col">
-        <Widget3/>
+        <Widget4/>
         </div>
         <div className="col">
           <Widget4/>
@@ -44,7 +36,7 @@ import './App.css';
         <Test/>
         </div>
         <div className="col">
-         <Test2/>
+         <Widget6/>
         </div>
   </div> 
   <Footer2/>

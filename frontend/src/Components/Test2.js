@@ -40,10 +40,10 @@ class Test2 extends React.Component
             <div className="card">
             <div className="card-body">
             <div className="Widget">
-                <center><button onClick={()=>this.gettrend()} className ="btnRefresh"><h1>LastFM - Tendances</h1></button></center>
+                <center><button onClick={()=>this.gettrend()} className ="btnRefresh"><h5>LastFM - Tendances</h5></button></center>
                 <hr></hr>
                 <div>
-                    <center><h2>Artistes les plus écoutés en ce moment :</h2></center>
+                    <center><h6>Artistes les plus écoutés en ce moment :</h6></center>
                     {!!this.state.trendArt && (<>
                     <div className="morceau">
                         <p className="informationMorceau">1 : {this.state.trendArt.artists.artist[0].name} </p>
@@ -69,7 +69,7 @@ class Test2 extends React.Component
                 </div>
                 <hr></hr>
                 <div>
-                    <center><h2>Titres les plus écoutés en ce moment :</h2></center>
+                    <center><h6>Titres les plus écoutés en ce moment :</h6></center>
                     {!!this.state.trendTitle && (<>
                     <div className="morceau">
                         <p className="informationMorceau">1 : {this.state.trendTitle.tracks.track[0].name} de {this.state.trendTitle.tracks.track[0].artist.name} </p>

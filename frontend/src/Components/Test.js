@@ -49,7 +49,7 @@ class Test extends React.Component
             <div className="card">
             <div className="card-body">
             <div className="Widget">
-                <center><h1>LastFM - Affichage du profil d'un utilisateur</h1></center>
+                <center><h5>LastFM - Affichage du profil d'un utilisateur</h5></center>
                 <div className="divWidget">
                     <input type="text" className="barreRech" value = {this.state.recherche} onChange={(e)=>this.termeRecherche(e)} onKeyPress={(e)=>{if(e.key=='Enter')this.getall()}}></input>
                     <button className ="btnRech" onClick={()=>this.getall()}>Recherche</button>
@@ -63,7 +63,7 @@ class Test extends React.Component
                       <img className="photoProfil" src={this.state.utilisateur.user.image[2]["#text"]}></img>
                     </div>
                     <div className="detailProfil">
-                      <h1>{this.state.utilisateur.user.name}</h1>
+                      <h5>{this.state.utilisateur.user.name}</h5>
                       <p>Nombre de lectures : {this.state.utilisateur.user.playcount}</p>
                     </div>
                      
@@ -72,7 +72,7 @@ class Test extends React.Component
                 
                 <hr></hr>
                 <div>
-                  <center><h2>Top 5 de ces titres préférés :</h2></center>
+                  <center><h6>Top 5 de ces titres préférés :</h6></center>
                   {!!this.state.topTitle && (<>
                     {!!this.state.topTitle.toptracks.track[0] && (<><div className="morceau">
                       <p className="informationMorceau">{this.state.topTitle.toptracks.track[0].name}</p>
@@ -108,7 +108,7 @@ class Test extends React.Component
               </div>
               <hr></hr>
               <div>                    
-                <center><h2>Top 5 de ces artistes préférés :</h2></center>
+                <center><h6>Top 5 de ces artistes préférés :</h6></center>
                 {!!this.state.topArtist && (<>
                 
                   {!!this.state.topArtist.topartists.artist[0] && (<><div className="morceau">
