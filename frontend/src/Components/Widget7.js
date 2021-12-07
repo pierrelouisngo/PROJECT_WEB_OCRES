@@ -35,7 +35,7 @@ export default class Widget6 extends React.Component {
             <div className="card">
        <div className="card-body">
             <div className="WidgetOC1">
-                <center><h5>Bandswintown - Evenement à venir</h5></center>
+                <center><h5>Bandswintown - Prochain evenement</h5></center>
                 <div className="divWidget">
                     <input type="text" className="barreRech" value={this.state.recherche} onChange={(e) => this.termeRecherche(e)} onKeyPress={(e) => { if (e.key == 'Enter') this.getall() }}></input>
                     <button className="btnRech" onClick={() => this.getall()}>Recherche</button>
@@ -45,7 +45,6 @@ export default class Widget6 extends React.Component {
 
                 {!!this.state.utilisateur && (<>
                     <div className="infoUser">
-                    <img className="photoProfil" src={this.state.utilisateur.datetime}></img>
                         <div className="detailProfil">
                             <h5>{this.state.utilisateur[0].venue.location}</h5>
                             <p> Date : {this.state.utilisateur[0].datetime}</p>

@@ -9,7 +9,7 @@ import React from "react";
 function App() {
   return (
     <div className="navigation">
-    <nav className="navbar navbar-expand navbar-dark bg-dark">
+    <nav className="navbar navbar-expand navbar-light bg-light">
       <div className="container">
         <NavLink className="navbar-brand" to="/">
           Dashboard &#127925;
