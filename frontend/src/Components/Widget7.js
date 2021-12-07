@@ -1,4 +1,3 @@
-
 import React from 'react';
 //import './App.css';
 import axios from 'axios';
@@ -20,7 +19,7 @@ export default class Widget6 extends React.Component {
     }
 
     getall() {
-        axios.get(`https://rest.bandsintown.com/artists/${this.state.recherche}/?app_id=0ca0cf2b477cf81859c0a0e548b04dd3`)
+        axios.get(`https://rest.bandsintown.com/artists/${this.state.recherche}/events?app_id=0ca0cf2b477cf81859c0a0e548b04dd3`)
             .then(res => {
                 const nvUtilisateur = res.data;
                 this.setState({ utilisateur: nvUtilisateur });
@@ -36,7 +35,7 @@ export default class Widget6 extends React.Component {
             <div className="card">
        <div className="card-body">
             <div className="WidgetOC1">
-                <center><h5>Bandswintown - Profil artiste</h5></center>
+                <center><h5>Bandswintown - Evenement à venir</h5></center>
                 <div className="divWidget">
                     <input type="text" className="barreRech" value={this.state.recherche} onChange={(e) => this.termeRecherche(e)} onKeyPress={(e) => { if (e.key == 'Enter') this.getall() }}></input>
                     <button className="btnRech" onClick={() => this.getall()}>Recherche</button>
@@ -46,13 +45,11 @@ export default class Widget6 extends React.Component {
 
                 {!!this.state.utilisateur && (<>
                     <div className="infoUser">
-                    <img className="photoProfil" src={this.state.utilisateur.thumb_url}></img>
+                    <img className="photoProfil" src={this.state.utilisateur.datetime}></img>
                         <div className="detailProfil">
-                            <h5>{this.state.utilisateur.name}</h5>
-                            <p> URL : {this.state.utilisateur.url}</p>
-                            <p>Events: {this.state.utilisateur.upcoming_event_count}</p>
+                            <h5>{this.state.utilisateur[0].venue.location}</h5>
+                            <p> Date : {this.state.utilisateur[0].datetime}</p>
                         </div>
-
                     </div>
                 </>)}
                 </div>

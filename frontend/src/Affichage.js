@@ -4,6 +4,7 @@ import Widget2 from "./Components/Widget2";
 import Widget3 from "./Components/Widget3";
 import Widget4 from "./Components/Widget4";
 import Widget6 from "./Components/Widget6";
+import Widget7 from "./Components/Widget7";
 import Header from "./Components/Header";
 import Footer from "./Components/Footer";
 import Footer2 from "./Components/Footer2";
@@ -28,23 +29,22 @@ import './App.css';
       <Widget2/>
       </div> 
 
-      <div className="col">
-        <Widget4/>
-        </div>
-
       <div className="col"> <Widget3/> </div>
 
         <div className="col">
-          <Widget4/>
+          <Widget6/>
         </div>
         <div className="col">
         <Test/>
         </div>
         <div className="col">
-         <Widget6/>
+         <Test2/>
         </div>
         <div className="col">
          <Test3/>
+        </div>
+        <div className="col">
+         <Widget7/>
         </div>
   </div> 
   <Footer2/>
