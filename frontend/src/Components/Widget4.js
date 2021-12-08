@@ -4,31 +4,46 @@ export const Widget4= ()=> {
 
     var [name,setName]=useState()
     var [description,setDescription]=useState()
+    var [date,setDate]=useState()
+    var [type,setType]=useState()
     
     const nameUpdate=(event)=>{ // Dealing with name field changes to update our state
         setName(event.target.value)
     }
 
      
-    const descriptionUpdate=(event)=>{ // Dealing with name field changes to update our state
+    const descriptionUpdate=(event)=>{ 
         setDescription(event.target.value)
     }
-    const handleSubmit=()=> { // Once the form has been submitted, this function will post to the backend
-        const postURL = "http://localhost:3001/index/" //Our previously set up route in the backend
+
+    const dateUpdate=(event)=>{ 
+        setDate(event.target.value)
+    }
+
+    
+    const typeUpdate=(event)=>{ 
+        setType(event.target.value)
+    }
+
+
+    const handleSubmit=()=> { 
+        const postURL = "http://localhost:3001/index/" 
         fetch(postURL, {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ // We should keep the fields consistent for managing this data later
+            body: JSON.stringify({ 
                 title: name,
-                description:description
+                description:description,
+                datedupost:date,
+                type:type
             })
         })
         .then(()=>{
-            // Once posted, the user will be notified 
-            alert('Success! Check your database ! ');
+           
+            alert('Ajouté avec succès ! ');
         })
     }
 
@@ -38,15 +53,23 @@ export const Widget4= ()=> {
 <div className="card-body">
 <form onSubmit={handleSubmit}>
   <div class="form-group">
-    <label for="Input1">Devoir</label>
-    <input required onChange={nameUpdate} type="text" class="form-control" id="Input1" placeholder="Devoir"/>
+    <label for="Input1">Souvenir</label>
+    <input required onChange={nameUpdate} type="text" class="form-control" id="Input1" placeholder="Souvenir"/>
   </div>
   <div class="form-group">
-    <label for="Input2">Description du devoir</label>
+    <label for="Input2">Description</label>
     <input required onChange={descriptionUpdate} type="text" class="form-control" id="Input2" placeholder="Description"/>
   </div>
+  <div class="form-group">
+    <label for="Input3">Date</label>
+    <input required onChange={dateUpdate} type="text" class="form-control" id="Input2" placeholder="JJ/MM/AA"/>
+  </div>
+  <div class="form-group">
+    <label for="Input4">Type de souvenir</label>
+    <input required onChange={typeUpdate} type="text" class="form-control" id="Input2" placeholder="Concert-Voyage-Sortie.."/>
+  </div>
   <br/>
-  <button type="submit" class="btn btn-primary">Soumettre</button>
+  <button type="submit" class="btn btn-success">Ajouter</button>
 </form>
 </div>
 </div>

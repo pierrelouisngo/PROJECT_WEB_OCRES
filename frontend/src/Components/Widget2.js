@@ -86,7 +86,7 @@ export default class Widget2 extends React.Component {
     return (  
       <div className="card" style={{marginRight :"450px"}} >
       <div className="card-body">
-      <h5>Top 5 Songs &#128202;</h5>   
+      <h5>Top 5 des titres &#128202;</h5>   
       <BarChart
             width={350}
             height={400}

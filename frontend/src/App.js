@@ -1,7 +1,6 @@
 import {Link, NavLink} from 'react-router-dom';
 import Routes from "./Routes";
 import Admin from "./Components/Admin";
-import About from "./Components/About";
 import Affichage from "./Affichage";
 import React from "react"; 
 

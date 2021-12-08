@@ -35,7 +35,7 @@ export default class Widget6 extends React.Component {
             <div className="card">
        <div className="card-body">
             <div className="WidgetOC1">
-                <center><h5>Bandswintown - Prochain evenement</h5></center>
+                <center><h5>Bandswintown - Prochain evenement &#128197;</h5></center>
                 <div className="divWidget">
                     <input type="text" className="barreRech" value={this.state.recherche} onChange={(e) => this.termeRecherche(e)} onKeyPress={(e) => { if (e.key == 'Enter') this.getall() }}></input>
                     <button className="btnRech" onClick={() => this.getall()}>Recherche</button>

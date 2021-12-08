@@ -3,26 +3,30 @@ import React, { useRef, useState } from "react";
 
 function Widget5() {
 
-const[id,setId]=useState('');
+    const [id, setId] = useState('');
 
 
-const handleInputRemove= () => {
-    axios
-    .delete(`http://localhost:3001/index/${id}`)
-    .catch(console.error);
-    document.location.reload(true);
-}
+    const handleInputRemove = () => {
+        axios
+            .delete(`http://localhost:3001/index/${id}`)
+            .catch(console.error);
+        alert('Souvenir supprimé avec succès ! ');
+        document.location.reload(true);
+    }
 
 
+    return (
+        <div className="card">
+            <div className="card-body">
+                <div>
+                    <h5>Supprimer un souvenir &#10060;</h5>
+                    <input placeholder="id du souvenir à supprimer" onChange={e => setId(e.target.value)} />
+                    <button onClick={() => handleInputRemove()} class="btn btn-danger">Supprimer</button>
+                </div>
+            </div>
+        </div>
 
-  
-  return (
-      <div>
-          <input placeholder="id" onChange={e=>setId(e.target.value)}/>
-         <button onClick={()=>handleInputRemove()}>Delete</button>  
-      </div>
-  
-  );
+    );
 }
 
 export default Widget5;

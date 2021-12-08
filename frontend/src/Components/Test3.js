@@ -45,7 +45,7 @@ class Test3 extends React.Component
             <div className="card">
             <div className="card-body">
             <div className="Widget">
-                <center><h1>Météo du jour</h1></center>
+                <center><h5>Météo du jour &#9728;</h5></center>
                 <div className="divWidget">
                     <input type="text" className="barreRech" value = {this.state.recherche} onChange={(e)=>this.termeRecherche(e)} onKeyPress={(e)=>{if(e.key=='Enter')this.getmeteo()}}></input>
                     <button className ="btnRech" onClick={()=>this.getmeteo()}>Recherche</button>
@@ -56,7 +56,7 @@ class Test3 extends React.Component
 
                   <div className="subDiv50 bordureD"><center>
                     {!!this.state.meteo && (<>
-                    <h2>Ville : {this.state.meteo.name} </h2>
+                    <h6>Ville : {this.state.meteo.name} </h6>
                     
                     <hr></hr>
                     <p>Température : {this.state.meteo.main.temp}°C </p>
@@ -68,7 +68,7 @@ class Test3 extends React.Component
                   <div className="subDiv50"><center>
                   {!!this.state.meteo && (<>
                     <img src={this.infosMeteo()}></img>
-                    <h2>{this.state.meteo.weather[0].main}</h2>  
+                    <h6>{this.state.meteo.weather[0].main}</h6>  
                     </>)}           
                   </center></div>
                     

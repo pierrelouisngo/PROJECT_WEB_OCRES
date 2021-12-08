@@ -6,8 +6,11 @@ import Widget4 from "./Components/Widget4";
 import Widget5 from "./Components/Widget5";
 import Widget6 from "./Components/Widget6";
 import Widget7 from "./Components/Widget7";
+import Widget8 from "./Components/Widget8";
+import Widget9 from "./Components/Widget9";
 import Header from "./Components/Header";
 import Footer from "./Components/Footer";
+import Carrousel from "./Components/Carrousel";
 import Footer2 from "./Components/Footer2";
 import Test from "./Components/Test";
 import Test2 from "./Components/Test2";
@@ -33,22 +36,25 @@ import './App.css';
       <div className="col"> <Widget3/> </div>
 
         <div className="col">
-          <Widget6/>
+          <Test/>
         </div>
         <div className="col">
-        <Test/>
+        <Test3/>
         </div>
         <div className="col">
          <Test2/>
         </div>
         <div className="col">
-         <Test3/>
+         <Widget6/>
         </div>
         <div className="col">
          <Widget7/>
         </div>
         <div className="col">
-         <Widget5/>
+         <Widget8/>
+        </div>
+        <div className="col">
+         <Carrousel/>
         </div>
   </div> 
   <Footer2/>

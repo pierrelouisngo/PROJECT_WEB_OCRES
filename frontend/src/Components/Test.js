@@ -49,7 +49,7 @@ class Test extends React.Component
             <div className="card">
             <div className="card-body">
             <div className="Widget">
-                <center><h5>LastFM - Affichage du profil d'un utilisateur</h5></center>
+                <center><h5>LastFM - Affichage du profil d'un utilisateur &#128102;</h5></center>
                 <div className="divWidget">
                     <input type="text" className="barreRech" value = {this.state.recherche} onChange={(e)=>this.termeRecherche(e)} onKeyPress={(e)=>{if(e.key=='Enter')this.getall()}}></input>
                     <button className ="btnRech" onClick={()=>this.getall()}>Recherche</button>

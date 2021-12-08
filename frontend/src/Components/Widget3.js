@@ -35,7 +35,10 @@ export default class Widget3 extends React.Component {
     console.log(this.state.info[0].title);
     for (let i = 0; i < this.state.info.length; i++) {
       temp+=`<li>`
+      temp += ` ${this.state.info[i]._id}</li><li>`;
       temp += ` ${this.state.info[i].title}</li><li>`;
+      temp += ` ${this.state.info[i].datedupost}</li><li>`;
+      temp += ` ${this.state.info[i].type}</li><li>`;
       temp += ` ${this.state.info[i].description}</li><hr>`;
 
     }
@@ -60,8 +63,8 @@ export default class Widget3 extends React.Component {
     return (
       <div className="card" >
         <div className="card-body">
-          <h5>Homeworks &#128218;</h5>
-          <p>Number of Homeworks: <span>{nb}</span></p>
+          <h5>Souvenirs &#129504;</h5>
+          <p>Nombre de souvenirs: <span>{nb}</span></p>
           <ul style={{overflow:"scroll",height:'200px'}}  dangerouslySetInnerHTML={{__html: str}}></ul>
         </div>
       </div>
