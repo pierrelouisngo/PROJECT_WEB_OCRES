@@ -1,6 +1,8 @@
 import axios from "axios";
 import React, { useRef, useState } from "react";
 
+// WIDGET QUI PERMET DE MODIFIER LES DONNEES DE LA BDD 
+
 function Widget9() {
 
 const[id,setId]=useState('');
@@ -38,6 +40,7 @@ const handleInputUpdate = () => {
     };
     console.log(donnees);
 
+    // APPEL DE LA ROUTE PATCH DEFINIE DANS INDEX.JS 
     axios
         .patch(`http://localhost:3001/index/${id}`, donnees)
         .catch(console.error);
@@ -45,6 +48,7 @@ const handleInputUpdate = () => {
     document.location.reload(true);
 };
 
+// AFFICHAGE
   return (
     <div className="card">
     <div className="card-body">

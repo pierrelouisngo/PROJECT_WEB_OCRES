@@ -1,6 +1,8 @@
 import React from 'react';
 import axios from 'axios';
 
+
+// API QUI AFFICHE LA METEO DU JOUR EN FONCTION DE LA VILLE 
 class Test3 extends React.Component
 {
     constructor(props)
@@ -17,6 +19,7 @@ class Test3 extends React.Component
       this.setState({recherche: e.target.value})
     }
 
+    // APPEL DE L'API METEO 
     getmeteo()
     {
       axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${this.state.recherche}&units=metric&appid=4081444b7b90198136fefe6ed4ccf35b`)
@@ -38,7 +41,7 @@ class Test3 extends React.Component
     {
       this.getmeteo();
     }
-
+// AFFICHAGE DES INFORMATIONS 
     render=()=>
     {
         return(

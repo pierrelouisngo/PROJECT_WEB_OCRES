@@ -1,5 +1,7 @@
 
 import React, { PureComponent } from 'react';
+
+// IMPORTATION DES LIBRAIRIES RECHART 
 import {
   BarChart,
   Bar,
@@ -14,7 +16,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 //import './App.css';
 
-
+// CREATION D'UN TABLEAU VIDE POUR STOCKER LES DONNEES 
 const donnee = [
   {
     name: '',
@@ -41,7 +43,7 @@ const donnee = [
 ];
 
 
-
+// WIDGET QUI AFFICHE UN GRAPHIQUE EN FONCTION DES DONNEES D'UNE API
 
 export default class Widget2 extends React.Component {
 
@@ -53,6 +55,7 @@ export default class Widget2 extends React.Component {
     
   };
 
+  // APPEL DE L'API LAST.FM
 
   async componentDidMount() {
     const url = 'https://ws.audioscrobbler.com/2.0/?method=chart.gettoptracks&api_key=30046088d36dc90443d8ef9df38a0e14&format=json'
@@ -82,7 +85,7 @@ export default class Widget2 extends React.Component {
     donnee[4].name=this.state.info.tracks.track[4].name;
     donnee[4].playcount=this.state.info.tracks.track[4].playcount;
 
-
+// AFFICHAGE DU GRAPHIQUE EN BARRE 
     return (  
       <div className="card" style={{marginRight :"450px"}} >
       <div className="card-body">

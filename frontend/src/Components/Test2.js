@@ -1,6 +1,8 @@
 
 import React from 'react';
 import axios from 'axios';
+
+// WIDGET QUI AFFICHE LES TENDANCES SUR LASTFM 
  
 class Test2 extends React.Component
 {
@@ -16,11 +18,13 @@ class Test2 extends React.Component
  
     gettrend()
     {
+        // APPEL DE L'API POUR LES TITRES EN TENDANCE SUR LAST.FM
         axios.get(`http://ws.audioscrobbler.com/2.0/?method=chart.gettoptracks&api_key=4934f604a95406e95dea7ba0ace62d11&format=json`)
         .then(res => {
           const nvTopTitle = res.data;
           this.setState({ trendTitle: nvTopTitle});
         });
+        // APPEL DE L'API POUR LES ARTISTES EN TENDANCE SUR LAST.FM
         axios.get(`http://ws.audioscrobbler.com/2.0/?method=chart.gettopartists&api_key=4934f604a95406e95dea7ba0ace62d11&format=json`)
         .then(res => {
           const nvTopArtist = res.data;
@@ -33,6 +37,7 @@ class Test2 extends React.Component
       this.gettrend();
     }
  
+    // AFFICHAGE DES INFORMATIONS 
     render=()=>
     {
         return(

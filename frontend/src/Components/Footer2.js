@@ -1,6 +1,8 @@
 import React from "react";
 import '../App.css';
 
+
+// ICI ON DEFINIT LE RENDU DU FOOTER 
 export default class Footer extends React.Component {
 
   render() {

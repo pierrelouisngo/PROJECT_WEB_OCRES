@@ -2,6 +2,7 @@ import React from 'react';
 //import './App.css';
 import axios from 'axios';
 
+// WIDGET QUI PERMET D'AFFICHER LES EVENTS PROCHAINS D'UN ARTISTE DONNE
 
 export default class Widget6 extends React.Component {
     constructor(props) {
@@ -17,6 +18,8 @@ export default class Widget6 extends React.Component {
     termeRecherche(e) {
         this.setState({ recherche: e.target.value })
     }
+
+    // APPEL DE L'API 
 
     getall() {
         axios.get(`https://rest.bandsintown.com/artists/${this.state.recherche}/events?app_id=0ca0cf2b477cf81859c0a0e548b04dd3`)

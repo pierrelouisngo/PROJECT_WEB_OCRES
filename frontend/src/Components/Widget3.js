@@ -4,12 +4,15 @@ import React from "react";
 //import './App.css';
 
 
+// WIDGET PERSONNALISE QUI AFFICHE LES DONNEES DE NOTRE BDD 
+
 export default class Widget3 extends React.Component {
   state = {
     loading: true,
     info: null
   };
 
+  // APPEL DE NOTRE API 
   async componentDidMount() {
   //  apiPosts
   //  .fetchPosts()
@@ -29,7 +32,7 @@ export default class Widget3 extends React.Component {
     
   }
 
- 
+ // PARCOURS DU TABLEAU POUR AFFICHER TOUTES LES DONNEES 
   affichagedonnee() {
     var temp="";
     console.log(this.state.info[0].title);
@@ -46,6 +49,7 @@ export default class Widget3 extends React.Component {
   }
 
 
+  // AFFICHAGE 
 
   render() {
 

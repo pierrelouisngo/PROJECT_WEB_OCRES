@@ -1,11 +1,15 @@
 import React, { useState }  from 'react'
 
+// PERMET D'AJOUTER DES SOUVENIRS 
+
 export const Widget4= ()=> {
 
     var [name,setName]=useState()
     var [description,setDescription]=useState()
     var [date,setDate]=useState()
     var [type,setType]=useState()
+
+    // ON REPREND LES VALEURS DES INPUT 
     
     const nameUpdate=(event)=>{ // Dealing with name field changes to update our state
         setName(event.target.value)
@@ -25,7 +29,7 @@ export const Widget4= ()=> {
         setType(event.target.value)
     }
 
-
+// FONCTION QUI PERMET A LA SOUMISSION DU FORMULAIRE D'AJOUTER LES ELEMENTS 
     const handleSubmit=()=> { 
         const postURL = "http://localhost:3001/index/" 
         fetch(postURL, {
@@ -48,6 +52,8 @@ export const Widget4= ()=> {
     }
 
     return (
+
+        // AFFICHAGE
     
 <div className="card">
 <div className="card-body">

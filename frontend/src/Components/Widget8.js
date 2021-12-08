@@ -3,6 +3,8 @@ import React from 'react';
 import axios from 'axios';
 
 
+// WIDGET QUI AFFICHE LES PAROLES D'UNE MUSIQUE EN FONCTION DE L'ARTISTE ET DU TITRE 
+
 export default class Widget6 extends React.Component {
     constructor(props) {
         super(props);
@@ -23,7 +25,7 @@ export default class Widget6 extends React.Component {
     }
 
 
-
+// AOPPEL DE L'API
     getall() {
         axios.get(`https://api.lyrics.ovh/v1/${this.state.recherche}/${this.state.titre}`)
             .then(res => {
@@ -37,6 +39,7 @@ export default class Widget6 extends React.Component {
         this.getall();
     }
 
+// AFFICHAGE 
     render = () => {
         return (
             <div className="card">

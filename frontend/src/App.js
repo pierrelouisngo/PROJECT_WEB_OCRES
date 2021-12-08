@@ -4,7 +4,7 @@ import Admin from "./Components/Admin";
 import Affichage from "./Affichage";
 import React from "react"; 
 
-
+// CETTE FONCTION PERMET DE CREER LE HEADER ET DE FAIRE LA NAVIGATION ENTRE LES DIFFERENTS COMPOSANT S
 function App() {
   return (
     <div className="navigation">
