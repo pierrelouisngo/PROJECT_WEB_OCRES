@@ -11,7 +11,7 @@ function App() {
     <nav className="navbar navbar-expand navbar-light bg-light">
       <div className="container">
         <NavLink className="navbar-brand" to="/">
-          Dashboard &#127925;
+          Dashboard &#127911;
         </NavLink>
         <div>
           <ul className="navbar-nav ml-auto">
