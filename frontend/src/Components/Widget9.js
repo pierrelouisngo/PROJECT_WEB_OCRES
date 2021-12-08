@@ -9,6 +9,25 @@ const[description,setDescription]=useState('');
 const [date,setDate]=useState('');
 const [type,setType]=useState('');
 
+const titreUpdate=(event)=>{
+    setTitre(event.target.value)
+}
+
+ 
+const descriptionUpdate=(event)=>{ 
+    setDescription(event.target.value)
+}
+
+const dateUpdate=(event)=>{ 
+    setDate(event.target.value)
+}
+
+
+const typeUpdate=(event)=>{ 
+    setType(event.target.value)
+}
+
+
 
 const handleInputUpdate = () => {
     let donnees = {
@@ -17,7 +36,7 @@ const handleInputUpdate = () => {
         "datedupost": date,
         "type":type
     };
-
+    console.log(donnees);
 
     axios
         .patch(`http://localhost:3001/index/${id}`, donnees)
@@ -32,11 +51,13 @@ const handleInputUpdate = () => {
       <div>
           <h5>Modifier les souvenirs &#9999; </h5>
           <input placeholder="id" onChange={e=>setId(e.target.value)}/>
-          <input placeholder="titre" onChange={e=>setTitre(e.target.value)}/>
-          <input placeholder="description" onChange={e=>setDescription(e.target.value)}/>
-          <input placeholder="date" onChange={e=>setDate(e.target.value)}/>
-          <input placeholder="type" onChange={e=>setType(e.target.value)}/>
-         <button onClick={()=>handleInputUpdate()}>Modifier</button> 
+          <input placeholder="titre" onChange={titreUpdate}/>
+          <input placeholder="description" onChange={descriptionUpdate}/>
+          <input placeholder="date" onChange={dateUpdate}/>
+          <input placeholder="type" onChange={typeUpdate}/>
+          <br/>
+          <br/> 
+         <button class="btn btn-primary" onClick={()=>handleInputUpdate()}>Modifier</button> 
       </div>
       </div>
       </div>

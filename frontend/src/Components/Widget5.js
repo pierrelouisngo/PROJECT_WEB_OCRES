@@ -21,6 +21,8 @@ function Widget5() {
                 <div>
                     <h5>Supprimer un souvenir &#10060;</h5>
                     <input placeholder="id du souvenir à supprimer" onChange={e => setId(e.target.value)} />
+                    <br/>
+                    <br/>
                     <button onClick={() => handleInputRemove()} class="btn btn-danger">Supprimer</button>
                 </div>
             </div>
