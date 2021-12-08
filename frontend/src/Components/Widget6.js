@@ -3,7 +3,7 @@ import React from 'react';
 //import './App.css';
 import axios from 'axios';
 
-
+// WIDGET QUI PERMET D'AFFICHER LE PROFIL D'UN ARTISTE HEBERGE SUR BANDSINTOWN , D'AVOIR ACCES A SA PLAYLIST EGALEMENT 
 export default class Widget6 extends React.Component {
     constructor(props) {
         super(props);

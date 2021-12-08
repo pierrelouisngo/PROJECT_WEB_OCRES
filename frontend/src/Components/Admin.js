@@ -6,6 +6,7 @@ import Widget4 from "./Widget4";
 import Widget5 from "./Widget5";
 import Widget9 from "./Widget9";
 
+// AFFICHAGE DES DIFFERENTS ELEMENTS POUR GERER LA BDD (CRUD)
 
 import React, { useState } from 'react'
 class Admin extends React.Component {

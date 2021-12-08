@@ -1,6 +1,10 @@
 import React from 'react';
 import axios from 'axios';
- 
+
+
+// WIDGET QUI AFFICHE LE PROFIL D'UN UTILISATEUR LAST.FM
+
+// CREATION DE L'AFFICHAGE TEXTE DU WIDGET QUE L'ON VA APPELER APRES 
 class Test extends React.Component
 {
     constructor(props)
@@ -18,19 +22,27 @@ class Test extends React.Component
     {
       this.setState({recherche: e.target.value})
     }
+
+    // APPEL DES API
  
     getall()
     {
+
+        // APPEL DE L'API POUR LES TITRES PREFERES 
         axios.get(`http://ws.audioscrobbler.com/2.0/?method=user.gettoptracks&user=${this.state.recherche}&api_key=4934f604a95406e95dea7ba0ace62d11&format=json`)
         .then(res => {
           const nvTopTitle = res.data;
           this.setState({ topTitle: nvTopTitle });
         });
+
+        // APPEL DE L'API POUR LES ARTISTES PREFERES 
         axios.get(`http://ws.audioscrobbler.com/2.0/?method=user.gettopartists&user=${this.state.recherche}&api_key=4934f604a95406e95dea7ba0ace62d11&format=json`)
         .then(res => {
           const nvTopArtist = res.data;
           this.setState({ topArtist: nvTopArtist });
         });
+
+        // APPEL DE L'API POUR AFFICHER LE PROFIL DE L'UTILISATEUR 
         axios.get(`http://ws.audioscrobbler.com/2.0/?method=user.getinfo&user=${this.state.recherche}&api_key=4934f604a95406e95dea7ba0ace62d11&format=json`)
         .then(res => {
           const nvUtilisateur = res.data;
@@ -42,7 +54,7 @@ class Test extends React.Component
     {
       this.getall();
     }
- 
+    // AFFICHAGE DU WIDGET 
     render=()=>
     {
         return(
